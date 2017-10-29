@@ -6,18 +6,14 @@ import android.media.Image;
  * Created by joshuareno on 10/28/17.
  */
 
-public class Internship {
-    public Attack[] attack;
+public abstract class Internship {
     public String company;
     public int level;
-    public String position;
     public Image logo;
 
-    public Internship(Attack[] attack, String company, int level, String position, Image logo) {
-        this.attack = attack;
+    public Internship(String company, int level, Image logo) {
         this.company = company;
         this.level = level;
-        this.position = position;
         this.logo = logo;
     }
 
@@ -25,12 +21,7 @@ public class Internship {
         return this;
     }
 
-    public Attack[] getAttacks() {
-        return attack;
-    }
+    public abstract Attack[] getAttacks();
 
-    public Attack getRandomAttack() {
-        double random = attack.length * Math.random() + 1;
-        return attack[(int) random];
-    }
+    public abstract void attack();
 }
