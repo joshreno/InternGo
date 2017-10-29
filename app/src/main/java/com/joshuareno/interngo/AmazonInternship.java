@@ -9,7 +9,7 @@ public class AmazonInternship extends LogisticsInternship {
     private Attack[] attacks;
 
     public AmazonInternship(int level) {
-        super("Amazon", level, "amazon.png");
+        super("Amazon", level, R.drawable.amazon);
         attacks = new Attack[2];
         attacks[0] = new Attack(this, "Deliver products", 20);
         attacks[1] = new Attack(this, "Sell groceries", 10);

@@ -9,7 +9,7 @@ public class GMInternship extends ManufacturingInternship {
     private Attack[] attacks;
 
     public GMInternship(int level) {
-        super("General Motors", level, "general_motors.png");
+        super("General Motors", level, R.drawable.general_motors);
         attacks = new Attack[2];
         attacks[0] = new Attack(this, "Drive in circles", 15);
         attacks[1] = new Attack(this, "Rev engine", 10);

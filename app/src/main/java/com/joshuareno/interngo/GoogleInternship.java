@@ -12,7 +12,7 @@ public class GoogleInternship extends SoftwareInternship {
     private Attack[] attacks;
 
     public GoogleInternship(int level) {
-        super("Google", level, "google.jpg");
+        super("Google", level, R.drawable.google);
         attacks = new Attack[2];
         attacks[0] = new Attack(this, "Google answer", 10);
         attacks[1] = new Attack(this,"Program Android", 15);

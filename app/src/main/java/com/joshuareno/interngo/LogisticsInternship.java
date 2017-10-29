@@ -6,8 +6,8 @@ package com.joshuareno.interngo;
 
 public abstract class LogisticsInternship extends Internship {
 
-    public LogisticsInternship(String company, int level, String logo) {
-        super(company, level, logo);
+    public LogisticsInternship(String company, int level, int logoID) {
+        super(company, level, logoID);
     }
 
 }

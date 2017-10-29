@@ -1,10 +1,15 @@
 package com.joshuareno.interngo;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import java.io.Serializable;
+
 /**
  * Created by aberc on 10/28/2017.
  */
 
-public class Attack {
+public class Attack implements Serializable {
     private Internship owner;
     private String name;
     private int damage;
@@ -27,7 +32,7 @@ public class Attack {
         return damage;
     }
 
-    public int attack(Internship opponent) {
+    public String attack(Internship opponent) {
         double ownerValue;
         if (owner instanceof SoftwareInternship) {
             ownerValue = 1;
@@ -56,13 +61,39 @@ public class Attack {
             difference = 1;
         }
 
+        int damageDealt;
         if (difference == 1) {
-            return (int)(damage * 1.5 * Math.pow(owner.getLevel(), 0.5));
+            damageDealt = (int)(damage * 1.5 * Math.pow(owner.getLevel(), 0.5));
         } else if (difference == -1) {
-            return (int)(damage * 0.66 * Math.pow(owner.getLevel(), 0.5));
+            damageDealt =  (int)(damage * 0.66 * Math.pow(owner.getLevel(), 0.5));
         } else {
-            return (int)(damage * Math.pow(owner.getLevel(), 0.5));
+            damageDealt = (int)(damage * Math.pow(owner.getLevel(), 0.5));
         }
+
+        boolean criticalAttack = false;
+        if (Math.random() > 0.8) {
+            criticalAttack = true;
+            damage *= 1.5;
+        }
+
+        opponent.damage(damageDealt);
+
+        String description = owner.getCompany() + " used " + name + ".";
+        if (criticalAttack) {
+            description += " It was a critical attack!";
+        }
+        if (difference == 1) {
+            description += " It was super effective!";
+        } else if (difference == -1) {
+            description += " It wasn't very effective.";
+        }
+
+        return description;
+
+    }
+
+    public int describeContents() {
+        return 0;
     }
 
 }

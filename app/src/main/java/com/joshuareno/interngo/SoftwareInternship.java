@@ -6,8 +6,8 @@ package com.joshuareno.interngo;
 
 public abstract class SoftwareInternship extends Internship {
 
-    public SoftwareInternship(String company, int level, String logo) {
-        super(company, level, logo);
+    public SoftwareInternship(String company, int level, int logoID) {
+        super(company, level, logoID);
     }
 
 }
