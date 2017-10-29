@@ -1,25 +1,25 @@
 package com.joshuareno.interngo;
 
 import android.graphics.drawable.Drawable;
-import android.media.Image;
 import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-
-
-import android.widget.ImageView;
 
 /**
  * Created by aberc on 10/28/2017.
  */
 
-public class GoogleInternship extends TechInternship {
-    ImageView logo;
+public class GoogleInternship extends SoftwareInternship {
+
+    private Attack[] attacks;
 
     public GoogleInternship(int level) {
-        super("Google", level, null);
-        Drawable d = ContextCompat.getDrawable();
-        
+        super("Google", level, "google.jpg");
+        attacks = new Attack[2];
+        attacks[0] = new Attack(this, "Google answer", 10);
+        attacks[1] = new Attack(this,"Program Android", 15);
+    }
+
+    public Attack[] getAttacks() {
+        return attacks;
     }
 
 }

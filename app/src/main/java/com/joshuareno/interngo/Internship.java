@@ -8,13 +8,17 @@ import android.media.Image;
 
 public abstract class Internship {
     public String company;
-    public int level;
-    public Image logo;
+    private int level;
+    public String logo;
 
-    public Internship(String company, int level, Image logo) {
+    public Internship(String company, int level, String logo) {
         this.company = company;
         this.level = level;
         this.logo = logo;
+    }
+
+    public int getLevel() {
+        return level;
     }
 
     public Internship getInstance() {
@@ -22,6 +26,4 @@ public abstract class Internship {
     }
 
     public abstract Attack[] getAttacks();
-
-    public abstract void attack();
 }
