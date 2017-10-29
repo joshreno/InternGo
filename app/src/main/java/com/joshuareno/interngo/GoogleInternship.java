@@ -18,7 +18,7 @@ public class GoogleInternship extends TechInternship {
 
     public GoogleInternship(int level) {
         super("Google", level, null);
-        Drawable d = ContextCompat.getDrawable()
+        Drawable d = ContextCompat.getDrawable();
         
     }
 

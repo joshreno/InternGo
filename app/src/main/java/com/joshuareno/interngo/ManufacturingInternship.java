@@ -5,4 +5,5 @@ package com.joshuareno.interngo;
  */
 
 public abstract class ManufacturingInternship extends Internship {
+
 }
